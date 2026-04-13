@@ -1,0 +1,52 @@
+classDiagram
+    class Pokemon {
+        +id : int
+        +name : str
+        +form : str
+        +type1 : str
+        +type2 : str
+        +stats : Stats
+        +generation : int
+    }
+
+    class Stats {
+        +hp : int
+        +attack : int
+        +defense : int
+        +sp_atk : int
+        +sp_def : int
+        +speed : int
+    }
+
+    class PokedexAbstract {
+        <<abstract>>
+        -_pokemon_list: list[Pokemon]
+        +\_\_len\_\_() : int
+        +\_\_contains\_\_(pokemon: Pokemon) : bool
+        +cargar_csv(file_path: str) : None
+        +filtrar_por_tipo(tipo: str) : list[Pokemon]
+        +filtrar_por_generacion(gen: int) : list[Pokemon]
+        +buscar_por_nombre(nombre: str) : Pokemon | None
+        +filtrar(tipo, generacion, legendario, hp_min, ataque_min) : list[Pokemon]
+        +agrupar_por_tipo(self) : dict[str, list[Pokemon]]
+        +agrupar_por_generacion(self) : dict[int, list[Pokemon]]
+        +top_n(n: int, stat: str) : list[Pokemon]
+        +tipos_mas_comunes(n: int) : list[tuple[str, int]]
+    }
+
+    class Pokedex {
+        +\_\_len\_\_() : int
+        +\_\_contains\_\_(pokemon: Pokemon) : bool
+        +cargar_csv(file_path: str) : None
+        +filtrar_por_tipo(tipo: str) : list[Pokemon]
+        +filtrar_por_generacion(gen: int) : list[Pokemon]
+        +buscar_por_nombre(nombre: str) : Pokemon | None
+        +filtrar(tipo, generacion, legendario, hp_min, ataque_min) : list[Pokemon]
+        +agrupar_por_tipo(self) : dict[str, list[Pokemon]]
+        +agrupar_por_generacion(self) : dict[int, list[Pokemon]]
+        +top_n(n: int, stat: str) : list[Pokemon]
+        +tipos_mas_comunes(n: int) : list[tuple[str, int]]
+    }
+    Pokemon --> Stats
+    PokedexAbstract --> Pokemon
+    PokedexAbstract <|-- Pokedex

@@ -1,0 +1,50 @@
+classDiagram
+    class Calzado {
+        -_sku: int 
+        +nombre : str 
+        +descripcion : str 
+        +tipo : CalzadoTipo 
+        +talle : CalzadoTalle
+        +color: CalzadoColor
+        -_cantidad : int 
+        -_precio : float
+
+        +total() : float
+    }       
+
+    class CalzadoTipo {
+        +descripcion: str
+    }
+
+    class CalzadoTalle {
+        +descripcion: str
+        +medida_en_cm : float
+    }
+    
+    class CalzadoColor {
+        +primario: str
+        +secundario: Optional[str]
+    }
+
+    class CalzadoAdminAbstract {
+        <<abstract>>
+        -_lista : List[Calzado]
+        +*agregar_calzado(calzado: Calzado) : None
+        +*eliminar_calzado(sku: int) : None
+        +*modificar_calzado(calzado: Calzado) : None
+        +*buscar_calzado(sku: int) : Optional[Calzado]
+    }
+
+    class CalzadoAdmin {
+        +agregar_calzado(calzado: Calzado) : None
+        +eliminar_calzado(sku: int) : None
+        +modificar_calzado(calzado: Calzado) : None
+        +buscar_calzado(sku: int) : Optional[Calzado]
+    }
+
+    Calzado --> CalzadoTipo
+    Calzado --> CalzadoTalle
+    Calzado --> CalzadoColor
+
+    CalzadoAdminAbstract --> Calzado
+    CalzadoAdminAbstract <|-- CalzadoAdmin
