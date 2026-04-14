@@ -8,6 +8,8 @@ class CalzadoAdminAbstract(ABC):
     def __init__(self) -> None:
         self._lista : list[Calzado] = []
 
+
+    @abstractmethod
     def agregar(self, item : Calzado) -> None:
         """Agrega al final de self._lista el elemento pasado por parámetro.
 
