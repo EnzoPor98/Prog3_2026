@@ -8,6 +8,18 @@ class CalzadoAdminAbstract(ABC):
     def __init__(self) -> None:
         self._lista : list[Calzado] = []
 
+    #GETTERS
+    @property
+    def lista(self) -> list[Calzado]:
+        return self._lista
+    
+    #SETTERS
+    @lista.setter
+    def lista(self, lista: list[Calzado]) -> None:
+        if not isinstance(lista, list):
+            raise ValueError("Se debe ingresar una lista de calzados.")
+        self._lista = lista
+
 
     @abstractmethod
     def agregar(self, item : Calzado) -> None:
