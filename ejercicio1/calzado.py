@@ -29,12 +29,18 @@ class Calzado:
     #SETTERS
     @sku.setter
     def sku(self, sku: int) -> None:
+        if sku < 0:
+            raise ValueError("Sku no puede ser un valor negativo")
         self._sku = sku
 
     @cantidad.setter
     def cantidad(self, cantidad: int) -> None:
+        if cantidad < 0:
+            raise ValueError("La cantidad no puede ser un valor negativo")
         self._cantidad = cantidad
 
     @precio.setter
     def precio(self, precio: float) -> None:
+        if precio < 0:
+            raise ValueError("El precio no puede ser un valor negativo")
         self._precio = precio
