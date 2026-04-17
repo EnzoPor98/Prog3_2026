@@ -1,7 +1,7 @@
 class CalzadoColor:
     def __init__(self, primario: str, secundario: str) -> None:
         self.primario: str
-        self.secundario: str | None
+        self.secundario: str | None # NO HACE OPCIONAL AL PARAMETRO.
 
     def __eq__(self, other: object) -> bool:
         return isinstance(other, CalzadoColor) and self.primario == other.primario and self.secundario == other.secundario

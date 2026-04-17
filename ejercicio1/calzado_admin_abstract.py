@@ -1,34 +1,14 @@
 from abc import ABC, abstractmethod
+from typing import Optional
 from calzado import Calzado
 from calzado_tipo import CalzadoTipo
 from calzado_color import CalzadoColor
 
+
 class CalzadoAdminAbstract(ABC):
 
-    def __init__(self) -> None:
-        self._lista : list[Calzado] = []
-
-    #GETTERS
-    @property
-    def lista(self) -> list[Calzado]:
-        return self._lista
-    
-    #SETTERS
-    @lista.setter
-    def lista(self, lista: list[Calzado]) -> None:
-        if not isinstance(lista, list):
-            raise ValueError("Se debe ingresar una lista de calzados.")
-        self._lista = lista
-
-
-    @abstractmethod
-    def agregar(self, item : Calzado) -> None:
-        """Agrega al final de self._lista el elemento pasado por parámetro.
-
-        Args:
-            item (Calzado): elemento a insertar al final de self._lista.
-        """
-        self._lista.append(item)
+    def __init__(self, lista: list[Calzado] = None) -> None:
+        self._lista = [] if lista == None else lista
 
     @abstractmethod
     def __repr__(self) -> str:
@@ -47,9 +27,45 @@ class CalzadoAdminAbstract(ABC):
             str: todos los elementos de self._lista concatenados en un único str.
         """
         pass
-    
+
     @abstractmethod
-    def filtrar_por_tipo(self, tipo : CalzadoTipo) -> list[Calzado]:
+    def agregar_calzado(self, item: Calzado) -> None:
+        """Agrega al final de self._lista el elemento pasado por parámetro.
+
+        Args:
+            item (Calzado): elemento a insertar al final de self._lista.
+        """
+        self._lista.append(item)
+
+    @abstractmethod
+    def eliminar_calzado(self, sku: int) -> None:
+        """elimina de self._lista el elemento con el sku pasado por parámetro.
+
+        Args:
+            int: entero identificador para el calzado buscado.
+        """
+        pass
+
+    @abstractmethod
+    def modificar_calzado(self, item: Calzado) -> None:
+        """modifica el elemento pasado por parámetro.
+
+        Args:
+            item (Calzado): elemento a modificar.
+        """
+        pass
+
+    @abstractmethod
+    def buscar_calzado(self, sku: int) -> Optional[Calzado]:
+        """busca el elemento según el valor pasado por parámetro.
+
+        Args:
+            sku: entero identificador para buscar el calzado en self.lista.
+        """
+        pass
+
+    @abstractmethod
+    def filtrar_por_tipo(self, tipo: CalzadoTipo) -> list[Calzado]:
         """Devuelve una sublista con todos los elementos cuyo tipo coincide con el pasado por parámetro.
 
         Args:
@@ -67,7 +83,7 @@ class CalzadoAdminAbstract(ABC):
         Args:
             desde (float, optional): Importe a partir del cual se quieren los calzados. Si es 0.00 no se tiene en cuenta.
             hasta (float, optional): Importe a partir del cual se quieren los calzados. Si es 0.00 no se tiene en cuenta.
-        
+
         Raises:
             Exception: arroja excepción del tipo ValueError si desde y hasta son 0.00 o si hasta es mayor que desde.
 
