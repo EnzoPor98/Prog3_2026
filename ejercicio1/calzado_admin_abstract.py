@@ -7,8 +7,8 @@ from calzado_color import CalzadoColor
 
 class CalzadoAdminAbstract(ABC):
 
-    def __init__(self, lista: list[Calzado] = None) -> None:
-        self._lista = [] if lista == None else lista
+    def __init__(self) -> None:
+        self._lista : list[Calzado] = []
 
     @abstractmethod
     def __repr__(self) -> str:
