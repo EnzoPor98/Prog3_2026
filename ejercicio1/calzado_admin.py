@@ -6,8 +6,8 @@ from ejercicio1.calzado_tipo import CalzadoTipo
 
 
 class CalzadoAdmin(CalzadoAdminAbstract):
-    def __init__(self, lista: list[Calzado] = None):
-        super().__init__(lista)
+    def __init__(self):
+        super().__init__()
 
     def __repr__(self) -> str:
         return f"CalzadoAdmin(Lista: {self._lista})"
