@@ -35,14 +35,14 @@ class CalzadoAdminAbstract(ABC):
         Args:
             item (Calzado): elemento a insertar al final de self._lista.
         """
-        self._lista.append(item)
+        pass
 
     @abstractmethod
     def eliminar_calzado(self, sku: int) -> None:
         """elimina de self._lista el elemento con el sku pasado por parámetro.
 
         Args:
-            int: entero identificador para el calzado buscado.
+            sku: entero identificador para el calzado buscado en self._lista.
         """
         pass
 
@@ -51,7 +51,7 @@ class CalzadoAdminAbstract(ABC):
         """modifica el elemento pasado por parámetro.
 
         Args:
-            item (Calzado): elemento a modificar.
+            item (Calzado): elemento a modificar en self._lista.
         """
         pass
 
@@ -60,7 +60,7 @@ class CalzadoAdminAbstract(ABC):
         """busca el elemento según el valor pasado por parámetro.
 
         Args:
-            sku: entero identificador para buscar el calzado en self.lista.
+            sku: entero identificador para buscar el calzado en self._lista.
         """
         pass
 
