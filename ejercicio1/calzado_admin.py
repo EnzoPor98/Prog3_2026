@@ -6,8 +6,8 @@ from ejercicio1.calzado_tipo import CalzadoTipo
 
 
 class CalzadoAdmin(CalzadoAdminAbstract):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, lista: list[Calzado] = None):
+        super().__init__(lista)
 
     def __repr__(self) -> str:
         return f"CalzadoAdmin(Lista: {self._lista})"
@@ -19,22 +19,37 @@ class CalzadoAdmin(CalzadoAdminAbstract):
         if calzado in self._lista:
             raise ValueError("El calzado ya existe en la lista.")
 
-        super().agregar(calzado)
+        self._lista.append(calzado)
 
     def eliminar_calzado(self, sku: int) -> None:
-        pass
+        for calzado in self._lista:
+            if calzado._sku == sku:
+                self._lista.remove(calzado)
+                break
 
     def modificar_calzado(self, calzado: Calzado) -> None:
-        pass
+        for i, x in self._lista:
+            if x._sku == calzado._sku:
+                self._lista[i] = calzado
+                break            
 
     def buscar_calzado(self, sku: int) -> Optional[Calzado]:
-        pass
+        for calzado in self._lista:
+            if calzado._sku == sku:
+                return calzado.__str__()
+                break
 
     def filtrar_por_tipo(self, tipo: CalzadoTipo) -> list[Calzado]:
-        pass
+        return [calzado for calzado in self._lista if calzado.tipo == CalzadoTipo]
 
     def filtrar_precio_entre(self, desde: float = 0, hasta: float = 0) -> list[Calzado]:
-        pass
+        if desde == 0 or hasta == 0:
+            raise ValueError("Los argumentos no pueden valer cero.")
+
+        if desde > hasta:
+            raise ValueError("El valor de DESDE no puede ser mayor al valor de HASTA.")
+
+        return [calzado for calzado in self._lista if (calzado._precio >= desde and calzado._precio <= hasta)]
 
     def cantidad_productos(self) -> int:
         res = 0
