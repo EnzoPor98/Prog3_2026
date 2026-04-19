@@ -1,7 +1,7 @@
 class CalzadoTalle:
     def __init__(self, descripcion: str, medida_en_cm: float) -> None:
-        self.descripcion: str
-        self.medida_en_cm: float
+        self.descripcion = descripcion
+        self.medida_en_cm = medida_en_cm
 
     def __eq__(self, other: object) -> bool:
         return isinstance(other, CalzadoTalle) and self.medida_en_cm == other.medida_en_cm
