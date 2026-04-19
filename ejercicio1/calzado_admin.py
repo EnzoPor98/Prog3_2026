@@ -1,3 +1,4 @@
+from typing import Optional
 from calzado_admin_abstract import CalzadoAdminAbstract
 from calzado import Calzado
 from calzado_tipo import CalzadoTipo
@@ -58,7 +59,7 @@ class CalzadoAdmin(CalzadoAdminAbstract):
     def total_productos(self) -> float:
         res = 0
         for calzado in self._lista:
-            res += calzado.total
+            res += calzado.total()
         return res
 
     # GETTERS
