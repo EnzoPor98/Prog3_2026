@@ -20,7 +20,6 @@ class Calzado:
             raise ValueError("El precio no puede ser un valor negativo")
         self._precio = precio
 
-    @property
     def total(self) -> float:
         return self._cantidad * self._precio
 

@@ -10,7 +10,7 @@ def main():
     tipo_casual = CalzadoTipo("Casual")
     tipo_formal = CalzadoTipo("Formal")
 
-    color_negro = CalzadoColor("Negro", "Negro")
+    color_negro = CalzadoColor("Negro")
     color_blanco = CalzadoColor("Blanco", "Blanco")
     color_rojo = CalzadoColor("Rojo", "Negro")
 
@@ -25,7 +25,7 @@ def main():
     calzado1 = Calzado(1, "Nike Air", "Zapatillas deportivas", tipo_deportivo, talle_40, color_negro, 10, 120.0)
     calzado2 = Calzado(2, "Adidas Retro", "Zapatillas casuales", tipo_casual, talle_42, color_blanco, 5, 80.0)
     calzado3 = Calzado(3, "Puma Elegant", "Zapatos formales", tipo_formal, talle_44, color_negro, 3, 150.0)
-    calzado4 = Calzado(4, "Reebok Sport", "Zapatillas running", tipo_deportivo, talle_40, color_rojo, 8, 100.0)
+    calzado4 = Calzado(4, "Reebok Sport", "Zapatillas running", tipo_deportivo, talle_40, color_rojo, 8, 150.0)
     calzado5 = Calzado(5, "Converse Classic", "Zapatillas clásicas", tipo_casual, talle_42, color_blanco, 12, 70.0)
 
     # Probar agregar_calzado
@@ -35,6 +35,7 @@ def main():
     admin.agregar_calzado(calzado3)
     admin.agregar_calzado(calzado4)
     admin.agregar_calzado(calzado5)
+    print(calzado1.total())
     print("Calzados agregados exitosamente.")
 
     # Probar buscar_calzado

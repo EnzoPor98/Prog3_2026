@@ -1,15 +1,13 @@
 class CalzadoColor:
-    def __init__(self, primario: str, secundario: str | None) -> None:
+    def __init__(self, primario: str, secundario: str = None) -> None:
         self.primario = primario
         self.secundario = secundario
 
     def __eq__(self, other: object) -> bool:
-        return isinstance(other, CalzadoColor) and self.primario == other.primario and self.secundario == other.secundario
+        return isinstance(other, CalzadoColor) and self.primario == other.primario
 
     def __str__(self) -> str:
-        return (f"CalzadoColor(Primario: {self.primario}, Secundario: {self.secundario})")
-    
+        return f"CalzadoColor(Primario: {self.primario}, Secundario: {self.secundario})"
+
     def __repr__(self):
         return f"CalzadoColor(Primario= {self.primario}, Secundario= {self.secundario})"
-    
-        
