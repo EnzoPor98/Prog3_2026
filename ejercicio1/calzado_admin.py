@@ -1,8 +1,6 @@
-from typing import Optional
-
 from calzado_admin_abstract import CalzadoAdminAbstract
-from ejercicio1.calzado import Calzado
-from ejercicio1.calzado_tipo import CalzadoTipo
+from calzado import Calzado
+from calzado_tipo import CalzadoTipo
 
 
 class CalzadoAdmin(CalzadoAdminAbstract):
@@ -28,7 +26,7 @@ class CalzadoAdmin(CalzadoAdminAbstract):
                 break
 
     def modificar_calzado(self, calzado: Calzado) -> None:
-        for i, x in self._lista:
+        for i, x in enumerate(self._lista):
             if x._sku == calzado._sku:
                 self._lista[i] = calzado
                 break            
@@ -36,11 +34,11 @@ class CalzadoAdmin(CalzadoAdminAbstract):
     def buscar_calzado(self, sku: int) -> Optional[Calzado]:
         for calzado in self._lista:
             if calzado._sku == sku:
-                return calzado.__str__()
-                break
+                return calzado
+        return None
 
     def filtrar_por_tipo(self, tipo: CalzadoTipo) -> list[Calzado]:
-        return [calzado for calzado in self._lista if calzado.tipo == CalzadoTipo]
+        return [calzado for calzado in self._lista if calzado.tipo == tipo]
 
     def filtrar_precio_entre(self, desde: float = 0, hasta: float = 0) -> list[Calzado]:
         if desde == 0 or hasta == 0:
@@ -60,7 +58,7 @@ class CalzadoAdmin(CalzadoAdminAbstract):
     def total_productos(self) -> float:
         res = 0
         for calzado in self._lista:
-            res += calzado.total()
+            res += calzado.total
         return res
 
     # GETTERS
