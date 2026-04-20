@@ -35,7 +35,6 @@ def main():
     admin.agregar_calzado(calzado3)
     admin.agregar_calzado(calzado4)
     admin.agregar_calzado(calzado5)
-    print(calzado1.total())
     print("Calzados agregados exitosamente.")
 
     # Probar buscar_calzado
