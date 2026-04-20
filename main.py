@@ -3,6 +3,7 @@ from ejercicio2 import main as main_ejercicio2
 
 def main():
     main_ejercicio1()
+    print("\n" + "="*100 + "\n")
     main_ejercicio2()
 
 if __name__ == "__main__":

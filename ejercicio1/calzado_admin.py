@@ -1,7 +1,7 @@
 from typing import Optional
-from calzado_admin_abstract import CalzadoAdminAbstract
-from calzado import Calzado
-from calzado_tipo import CalzadoTipo
+from ejercicio1.calzado_admin_abstract import CalzadoAdminAbstract
+from ejercicio1.calzado import Calzado
+from ejercicio1.calzado_tipo import CalzadoTipo
 
 
 class CalzadoAdmin(CalzadoAdminAbstract):

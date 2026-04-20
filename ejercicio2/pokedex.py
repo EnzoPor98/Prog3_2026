@@ -1,6 +1,6 @@
 import csv
-from pokemon import Pokemon
-from stats import Stats
+from ejercicio2.pokemon import Pokemon
+from ejercicio2.stats import Stats
 
 
 class Pokedex:

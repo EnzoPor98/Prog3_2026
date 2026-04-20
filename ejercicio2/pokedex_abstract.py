@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from pokemon import Pokemon
+from ejercicio2.pokemon import Pokemon
 
 class PokedexAbstract(ABC):
 

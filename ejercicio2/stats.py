@@ -6,6 +6,12 @@ class Stats:
         self._sp_atk = sp_atk
         self._sp_def = sp_def
         self._speed = speed
+        
+    def __repr__(self) -> str:
+        return f"Stats(hp={self._hp}, attack={self._attack}, defense={self._defense}, sp_atk={self._sp_atk}, sp_def={self._sp_def}, speed={self._speed})"
+    
+    def __str__(self) -> str:
+        return f"hp={self._hp}, attack={self._attack}, defense={self._defense}, sp_atk={self._sp_atk}, sp_def={self._sp_def}, speed={self._speed})"
     
     def total_stats(self) -> int:
         return self._hp + self._attack + self._defense + self._sp_atk + self._sp_def + self._speed

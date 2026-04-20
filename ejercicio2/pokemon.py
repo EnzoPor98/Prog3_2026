@@ -1,4 +1,4 @@
-from stats import Stats
+from ejercicio2.stats import Stats
 class Pokemon:
     POKEMON_ID = 0
     
@@ -18,10 +18,10 @@ class Pokemon:
         return False
 
     def __repr__(self) -> str:
-        return f"Pokemon(id={self._id}, name='{self.name}', form='{self.form}', type1='{self.type1}', type2='{self.type2}', stats={self.stats}, generation={self._generation})"
+        return f"Pokemon(id={self._id}, name='{self.name}', form='{self.form}', type1='{self.type1}', type2='{self.type2}', stats={str(self.stats)}, generation={self._generation})"
     
     def __str__(self) -> str:
-        return f"Pokemon(id={self._id}, name='{self.name}', form='{self.form}', type1='{self.type1}', type2='{self.type2}', stats={self.stats}, generation={self._generation})"
+        return f"Pokemon(id={self._id}, name='{self.name}', form='{self.form}', type1='{self.type1}', type2='{self.type2}', stats={str(self.stats)}, generation={self._generation})"
     
     # GETTERS
     @property

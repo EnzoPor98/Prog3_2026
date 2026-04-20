@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Optional
-from calzado import Calzado
-from calzado_tipo import CalzadoTipo
-from calzado_color import CalzadoColor
+from ejercicio1.calzado import Calzado
+from ejercicio1.calzado_tipo import CalzadoTipo
+from ejercicio1.calzado_color import CalzadoColor
 
 
 class CalzadoAdminAbstract(ABC):
