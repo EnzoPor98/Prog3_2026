@@ -1,6 +1,6 @@
-from calzado_tipo import CalzadoTipo
-from calzado_color import CalzadoColor
-from calzado_talle import CalzadoTalle
+from ejercicio1.calzado_tipo import CalzadoTipo
+from ejercicio1.calzado_color import CalzadoColor
+from ejercicio1.calzado_talle import CalzadoTalle
 
 
 class Calzado:

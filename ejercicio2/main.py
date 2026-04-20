@@ -1,8 +1,5 @@
-from operator import contains
-
-from stats import Stats
-from pokemon import Pokemon
-from pokedex import Pokedex
+from ejercicio2.pokemon import Pokemon
+from ejercicio2.pokedex import Pokedex
 
 def main():
     pokedex = Pokedex()
