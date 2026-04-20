@@ -4,10 +4,10 @@ from ejercicio2.pokemon import Pokemon
 class PokedexAbstract(ABC):
 
     def __init__(self) -> None:
-        self._pokemon_list : list[Pokemon] = []
+        self._pokemones : list[Pokemon] = []
 
     def __len__(self) -> int:
-        return len(self._pokemon_list)
+        return len(self._pokemones)
 
     @abstractmethod
     def cargar_csv(self, file_path: str) -> None:

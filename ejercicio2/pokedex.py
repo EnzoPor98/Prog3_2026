@@ -1,18 +1,20 @@
 import csv
+from ejercicio2.pokedex_abstract import PokedexAbstract
 from ejercicio2.pokemon import Pokemon
 from ejercicio2.stats import Stats
 
 
-class Pokedex:
+class Pokedex(PokedexAbstract):
 
     def __init__(self):
-        self._pokemones: list = []
-
-    def __len__(self) -> int:
-        return len(self._pokemones)
+        super().__init__()
 
     def __contains__(self, pokemon) -> bool:
         return pokemon in self._pokemones
+    
+    @property
+    def pokemones(self) -> list[Pokemon]:
+        return self._pokemones
 
     def cargar_csv(self, file_path: str) -> None:
         try:

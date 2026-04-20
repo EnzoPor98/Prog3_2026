@@ -21,7 +21,7 @@ def main():
     
     print(f"Pokemones de tipo 'Fire' y generación 1: {[p.name for p in pokedex.filtrar(tipo='Fire', generacion=1)]}\n")
     
-    print(f"Pokemones agrupados por tipo: {[p.name for p in por_tipos['Fire']]}\n")
+    print(f"Pokemones agrupados por tipo: {[p.name for p in por_tipos['Water']]}\n")
     
     print(f"Pokemones agrupados por generación: {[p.name for p in por_generaciones[1]]}\n")
     
