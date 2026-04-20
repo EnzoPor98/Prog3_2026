@@ -2,7 +2,7 @@ from ejercicio2.pokemon import Pokemon
 from ejercicio2.pokedex import Pokedex
 
 def main():
-    pokedex = Pokedex()
+    pokedex = Pokedex() 
     pokedex.cargar_csv("C:/Users/x/Desktop/Estudios/Enzo/2.2. Programación III/Trabajo Grupal N°1/Prog3_2026/ejercicio2/pokemon.csv")
     
     pikachu = pokedex._pokemones[24]
